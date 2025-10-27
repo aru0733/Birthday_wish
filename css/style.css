@@ -163,7 +163,7 @@ body{
 @keyframes page4CakeEntrance{0%{opacity:0; transform:translateY(15px) scale(0.95)} 100%{opacity:1; transform:translateY(0) scale(1)}}
 .birthday-cake{position:relative; width:220px; height:140px; margin:0 auto; animation:cakeFloat 4s ease-in-out infinite}
 .cake-base{position:absolute; bottom:0; left:0; right:0; height:95px; background:linear-gradient(135deg, #ff6b9c 0%, #ff8fb3 50%, #ffa0c0 100%); border-radius:0 0 25px 25px; box-shadow:0 15px 35px rgba(255,107,156,.35), inset 0 -4px 8px rgba(255,255,255,.2), inset 0 4px 8px rgba(255,255,255,.1)}
-.cake-frosting{position:absolute; top:25px; left:1px; right:1px; height:22px; background:linear-gradient(135deg, #ffffff 0%, #ffd6e6 50%, #fff3f7 100%); border-radius:5px; box-shadow:0 8px 20px rgba(255,255,255,.6), inset 0 2px 4px rgba(255,255,255,.8)}
+.cake-frosting{position:absolute; top:80px; left:1px; right:1px; height:22px; background:linear-gradient(135deg, #ffffff 0%, #ffd6e6 50%, #fff3f7 100%); border-radius:5px; box-shadow:0 8px 20px rgba(255,255,255,.6), inset 0 2px 4px rgba(255,255,255,.8)}
 .cake-frosting::after{content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 50%, transparent 0%, rgba(255,107,156,.1) 100%); border-radius:12px; pointer-events:none}
 
 /* Page 4 Candles - Specific to birthday cake */
@@ -242,7 +242,7 @@ body{
   .birthday-cake{width:180px; height:115px}
   .cake-base{height:80px}
   .cake-frosting{top:20px; height:18px}
-  .page4 .candles-container{gap:15px; top:15px}
+  .page4 .candles-container{gap:15px; top:40px}
   .page4 .candle{width:8px; height:25px; min-width:44px; min-height:25px}
   .page4 .candle-body{min-width:8px; min-height:30px}
   .page4 .flame{width:12px; height:16px; top:-8px; min-width:12px; min-height:16px}
