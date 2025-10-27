@@ -167,7 +167,7 @@ body{
 .cake-frosting::after{content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 50%, transparent 0%, rgba(255,107,156,.1) 100%); border-radius:12px; pointer-events:none}
 
 /* Page 4 Candles - Specific to birthday cake */
-.page4 .candles-container{position:absolute; top:22px; left:50%; transform:translateX(-50%); display:flex; gap:18px; z-index:10; pointer-events:none}
+.page4 .candles-container{position:absolute; top:50px; left:50%; transform:translateX(-50%); display:flex; gap:18px; z-index:10; pointer-events:none}
 .page4 .candle{position:relative; width:10px; height:15px; cursor:pointer; transition:transform 0.2s ease; pointer-events:auto; z-index:11; padding:12px}
 .page4 .candle:hover{transform:scale(1.15)}
 .page4 .candle-body{width:100%; height:100%; background:linear-gradient(180deg, #ffffff 0%, #ffe3b8 100%); border-radius:4px; box-shadow:0 3px 10px rgba(0,0,0,.25), inset 0 2px 4px rgba(255,255,255,.8); position:relative; z-index:1}
@@ -242,7 +242,7 @@ body{
   .birthday-cake{width:180px; height:115px}
   .cake-base{height:80px}
   .cake-frosting{top:20px; height:18px}
-  .page4 .candles-container{gap:15px; top:1px}
+  .page4 .candles-container{gap:15px; top:15px}
   .page4 .candle{width:8px; height:25px; min-width:44px; min-height:25px}
   .page4 .candle-body{min-width:8px; min-height:30px}
   .page4 .flame{width:12px; height:16px; top:-8px; min-width:12px; min-height:16px}
