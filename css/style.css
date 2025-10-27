@@ -1,0 +1,347 @@
+/* Base Theme: soft romantic, dreamy aesthetic */
+:root{
+  --bg:#1a0f14; /* deep plum-brown night */
+  --bg-soft:#22131a; /* slightly lighter for layers */
+  --text:#fff3f7; /* warm near-white */
+  --muted:#ffd6e6; /* blush for secondary text */
+  --accent:#ff6b9c; /* rose pink */
+  --accent-2:#ffb27a; /* peach glow */
+  --heart:#ff5c8a; /* romantic heart */
+  --card:#2a1520; /* card surface */
+  --shadow:0 18px 48px rgba(255, 92, 138, .18);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:"Quicksand", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--text);
+  background: radial-gradient(1100px 700px at 75% -10%, rgba(255,107,156,.28), transparent 60%),
+              radial-gradient(900px 600px at -15% 80%, rgba(255,178,122,.18), transparent 60%),
+              radial-gradient(1200px 800px at 50% 120%, rgba(0,0,0,.25), transparent 60%),
+              var(--bg);
+  background-attachment: fixed;
+}
+.page .container{min-height:100dvh;display:grid;place-items:center;padding:32px}
+.container.split{grid-template-columns:1fr 1fr;gap:36px}
+.container.center{place-items:center;text-align:center;gap:16px}
+
+/* Typography */
+.title{font-family:"Great Vibes", cursive; font-size: clamp(40px,6.5vw,72px); letter-spacing:.4px; margin:12px 0; color:#fff7fa; text-shadow:0 2px 18px rgba(255,92,138,.18); opacity:0; transform: translateY(10px) scale(.98); animation: titleIn .9s ease .15s forwards}
+@keyframes titleIn{to{opacity:1; transform: translateY(0) scale(1)}}
+.subtitle{font-size:clamp(16px,2.2vw,22px); color:var(--muted); margin:0 0 18px}
+.script{font-family:"Great Vibes", cursive; font-size:clamp(26px,4.2vw,42px); color:var(--accent-2)}
+
+/* Gentle entrances for non-index pages */
+.page2 .script,.page3 .script,.page4 .title{opacity:0; transform:translateY(8px); animation:fadeUp .7s ease .1s forwards}
+.page2 .photo-frame{opacity:0; transform:translateY(10px); animation:fadeUp .8s ease .15s forwards}
+.page2 .notes li{opacity:0; transform:translateY(6px)}
+.page2 .notes li:nth-child(1){animation:fadeUp .6s ease .25s forwards}
+.page2 .notes li:nth-child(2){animation:fadeUp .6s ease .35s forwards}
+.page2 .notes li:nth-child(3){animation:fadeUp .6s ease .45s forwards}
+
+/* Simple fade-in for index subtitle */
+.page1 .subtitle{opacity:0; transform:translateY(8px); animation:fadeUp .6s ease .3s forwards}
+
+/* Cute Button */
+.btn{appearance:none;border:none;cursor:pointer;text-decoration:none;display:inline-grid;place-items:center;padding:14px 22px;border-radius:18px;font-weight:700;transition:transform .2s ease, filter .3s ease, box-shadow .3s ease; box-shadow:0 14px 32px rgba(255,107,156,.30)}
+.btn-cute{color:#2b0f16;background:linear-gradient(135deg, #ff6b9c 0%, #ff8fb3 40%, #ffb27a 100%); position:relative}
+.btn-cute::after{content:"";position:absolute;inset:0;border-radius:inherit;padding:2px;background:linear-gradient(135deg, rgba(255,255,255,.55), rgba(255,255,255,0)); -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor; mask-composite:exclude; opacity:.55}
+.btn-cute:hover{transform:translateY(-2px) scale(1.02); filter:saturate(1.15)}
+.btn-cute:active{transform:translateY(0) scale(.98)}
+
+/* Page 1: Cake Animation */
+.hero{display:grid;justify-items:center;gap:16px; animation:fadeUp .8s ease .1s both; position:relative}
+.parallax-wrap{position:relative; will-change:transform}
+.sparkles{position:absolute;inset:0; pointer-events:none; background:
+  radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,.65), transparent 40%),
+  radial-gradient(1.5px 1.5px at 70% 20%, rgba(255,178,122,.8), transparent 40%),
+  radial-gradient(2px 2px at 40% 70%, rgba(255,107,156,.8), transparent 40%),
+  radial-gradient(1.2px 1.2px at 85% 60%, rgba(255,255,255,.7), transparent 40%);
+  opacity:.6; filter:drop-shadow(0 0 6px rgba(255,255,255,.4));
+  animation: twinkle 4s ease-in-out infinite;
+}
+@keyframes twinkle{ 0%,100%{opacity:.45} 50%{opacity:.9} }
+.cake{position:relative;width:220px;height:220px; filter:drop-shadow(0 22px 44px rgba(255,107,156,.28)); animation: float 4s ease-in-out infinite}
+.plate{position:absolute;bottom:16px;left:50%;transform:translateX(-50%); width:200px;height:18px;border-radius:12px;background:linear-gradient(180deg,#4d2a36,#2a1520)}
+.layer{position:absolute;left:50%;transform:translateX(-50%); width:180px;height:42px;border-radius:12px;background:linear-gradient(180deg,#ffd1dc,#ff9db6); box-shadow:inset 0 -6px 0 rgba(0,0,0,.10)}
+.layer1{bottom:34px}
+.layer2{bottom:78px; width:160px}
+.layer3{bottom:120px; width:140px}
+.icing{position:absolute;left:50%;transform:translateX(-50%); bottom:150px;width:150px;height:24px;border-radius:12px;background:linear-gradient(180deg,#fff7fb,#ffe6ef)}
+.cake .candle{position:absolute;left:50%;transform:translateX(-50%); bottom:182px;width:14px;height:48px;border-radius:8px;background:linear-gradient(180deg,#ffffff,#ffe3b8); z-index:10; box-shadow:0 2px 8px rgba(0,0,0,.2)}
+.cake .flame{position:absolute;left:50%;transform:translateX(-50%);top:-18px;width:14px;height:22px;border-radius:10px 10px 10px 10px; background:radial-gradient(circle at 50% 35%, #fff6a9 0 40%, #ffb703 45% 60%, #ff4d00 70% 100%); animation:flicker 1.2s infinite; z-index:11}
+
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes flicker{0%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.08)}100%{transform:translateX(-50%) scale(1)}}
+@keyframes fadeUp{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
+
+/* Page 2: Slider Cards - Aesthetic */
+.slider-container{width:100%; max-width:420px; margin:0 auto; position:relative; padding:0}
+.slider-wrapper{overflow:hidden; border-radius:24px; background:var(--card); box-shadow:0 20px 50px rgba(255,107,156,.25), 0 8px 24px rgba(0,0,0,.1); transition:box-shadow .3s ease, transform .2s ease}
+.slider-wrapper:hover{transform:translateY(-2px); box-shadow:0 25px 60px rgba(255,107,156,.3), 0 10px 28px rgba(0,0,0,.12)}
+.slider-track{display:flex; transition:transform 0.6s cubic-bezier(0.34,1.56,0.64,1); will-change:transform}
+.slider-card{min-width:100%; display:flex; flex-direction:column; transition:transform .3s ease}
+.slider-card:hover{transform:translateY(-4px)}
+.card-image{position:relative; aspect-ratio:4/3; overflow:hidden}
+.card-image::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, transparent 0%, rgba(255,107,156,.15) 100%); z-index:1; pointer-events:none}
+.card-image img{width:100%; height:100%; object-fit:cover; filter:saturate(1.08) contrast(1.06); transition:transform .6s cubic-bezier(0.34,1.56,0.64,1)}
+.slider-card:hover .card-image img{transform:scale(1.1)}
+.card-content{padding:28px 24px; text-align:center; background:linear-gradient(180deg, rgba(255,107,156,.12), rgba(255,178,122,.08)); position:relative}
+.card-content::before{content:'💕'; position:absolute; top:-20px; left:50%; transform:translateX(-50%); font-size:32px; filter:drop-shadow(0 4px 10px rgba(255,107,156,.25)); z-index:2}
+.card-note{color:var(--text); font-size:18px; line-height:1.8; margin:8px 0 0; font-weight:600; font-style:italic; letter-spacing:.02em; background:linear-gradient(135deg, var(--text) 0%, var(--muted) 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text}
+
+/* Slider Controls */
+.slider-controls{display:flex; align-items:center; justify-content:space-between; margin-top:16px; gap:12px}
+.slider-btn{width:40px; height:40px; border-radius:50%; border:none; background:linear-gradient(135deg, var(--accent), var(--accent-2)); color:#2b0f16; font-size:20px; font-weight:700; cursor:pointer; display:grid; place-items:center; transition:transform .2s ease, box-shadow .3s ease; box-shadow:0 8px 20px rgba(255,107,156,.25)}
+.slider-btn:hover{transform:scale(1.1); box-shadow:0 12px 28px rgba(255,107,156,.35)}
+.slider-btn:active{transform:scale(.95)}
+.slider-dots{display:flex; gap:8px; flex:1; justify-content:center}
+.slider-dot{width:8px; height:8px; border-radius:50%; background:rgba(255,107,156,.3); cursor:pointer; transition:background .3s ease, transform .2s ease}
+.slider-dot.active{background:var(--accent); transform:scale(1.2)}
+.slider-dot:hover{background:rgba(255,107,156,.6)}
+
+/* Page 3: Modal Surprise */
+.modal{position:fixed;inset:0;display:grid;place-items:center;background:rgba(26,15,20,.55); backdrop-filter: blur(6px); opacity:0; pointer-events:none; transition: opacity .3s ease}
+.modal.show{opacity:1; pointer-events:auto}
+.modal-content{width:min(680px,92vw); background:linear-gradient(180deg,#2a1520,#1f0f16); border:1px solid rgba(255,107,156,.35); border-radius:20px; padding:24px; box-shadow:var(--shadow); position:relative; animation:fadeUp .4s ease both}
+.page3 .btn#surpriseBtn{animation:fadeUp .7s ease .2s both}
+.page3 .modal-content h3{animation:fadeUp .6s ease .05s both}
+.page3 .modal-content p{animation:fadeUp .6s ease .15s both}
+.modal-content h3{margin:8px 0 8px}
+.modal-content p{color:var(--text)}
+.close{position:absolute;top:10px;right:12px; background:transparent;border:none;color:var(--muted); font-size:26px; cursor:pointer}
+.close:hover{color:var(--text)}
+
+/* Page 3: Enhanced Surprise Effects */
+/* Floating Love Notes */
+.love-notes{position:fixed;inset:0;pointer-events:none;z-index:1}
+.love-note{position:absolute;background:linear-gradient(135deg, rgba(255,107,156,.9), rgba(255,178,122,.8)); color:#2b0f16; padding:8px 12px; border-radius:12px; font-size:14px; font-weight:600; box-shadow:0 8px 20px rgba(255,107,156,.3); animation:floatNote 8s ease-in-out infinite; opacity:0}
+@keyframes floatNote{0%,100%{transform:translateY(0) rotate(-2deg); opacity:0} 10%,90%{opacity:1} 50%{transform:translateY(-20px) rotate(2deg)}}
+
+/* Page 3: Single Picture Display */
+.page3-photo{margin:20px 0; opacity:0; transform:translateY(10px); animation:fadeUp .8s ease .15s forwards}
+.photo-frame-single{position:relative; width:100%; max-width:300px; margin:0 auto; border-radius:20px; overflow:hidden; box-shadow:0 15px 40px rgba(255,107,156,.25), 0 8px 20px rgba(0,0,0,.15); transition:transform .3s ease}
+.photo-frame-single:hover{transform:translateY(-4px)}
+.photo-frame-single img{width:100%; height:auto; display:block; filter:saturate(1.05) contrast(1.04); transition:transform .4s ease}
+.photo-frame-single:hover img{transform:scale(1.06)}
+
+/* Enhanced Surprise Button */
+.surprise-btn{position:relative; overflow:hidden; transition:all .3s ease}
+.surprise-btn:hover{transform:scale(1.05); box-shadow:0 20px 40px rgba(255,107,156,.4)}
+.surprise-btn:active{transform:scale(.98)}
+.btn-hearts{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.btn-heart{position:absolute;font-size:12px;color:var(--heart);animation:btnHeartRise 1.5s ease-out forwards; opacity:0}
+@keyframes btnHeartRise{0%{transform:translateY(0) scale(0); opacity:1} 100%{transform:translateY(-40px) scale(1); opacity:0}}
+
+/* Heart Rain Effect */
+.heart-rain{position:fixed;inset:0;pointer-events:none;z-index:1}
+.rain-heart{position:absolute;font-size:16px;color:var(--heart);animation:heartRain 4s linear forwards; opacity:.8}
+@keyframes heartRain{0%{transform:translateY(-50px) rotate(0deg); opacity:.8} 100%{transform:translateY(100vh) rotate(360deg); opacity:0}}
+
+/* Sparkle Effects */
+.sparkle-container{position:fixed;inset:0;pointer-events:none;z-index:1}
+.sparkle{position:absolute;width:4px;height:4px;background:radial-gradient(circle, #fff, transparent); border-radius:50%; animation:sparkleTwinkle 2s ease-in-out infinite; opacity:0}
+@keyframes sparkleTwinkle{0%,100%{opacity:0; transform:scale(0)} 50%{opacity:1; transform:scale(1)}}
+
+/* Surprise Messages */
+.surprise-messages{position:fixed;inset:0;pointer-events:none;z-index:2}
+.surprise-text{position:absolute;background:linear-gradient(135deg, rgba(255,107,156,.95), rgba(255,178,122,.9)); color:#2b0f16; padding:12px 16px; border-radius:16px; font-weight:700; font-size:16px; box-shadow:0 10px 25px rgba(255,107,156,.4); opacity:0; transform:scale(0.8); animation:surprisePop 2.5s ease-out forwards; white-space:nowrap; max-width:200px; text-align:center}
+@keyframes surprisePop{0%{opacity:0; transform:scale(0.8) translateY(20px)} 15%,85%{opacity:1; transform:scale(1.05) translateY(0)} 100%{opacity:0; transform:scale(0.9) translateY(-20px)}}
+
+/* Floating Hearts Background */
+.floating-hearts-bg{position:fixed;inset:0;pointer-events:none;z-index:0; overflow:hidden}
+.bg-heart{position:absolute;font-size:20px;color:rgba(255,107,156,.3); animation:bgHeartFloat 12s linear infinite; opacity:.6}
+@keyframes bgHeartFloat{0%{transform:translateY(100vh) translateX(0) rotate(0deg); opacity:.6} 50%{opacity:.8} 100%{transform:translateY(-50px) translateX(20px) rotate(360deg); opacity:0}}
+
+/* Page 4: Birthday Celebration */
+.page4 .title{color:var(--heart); animation:birthdayBounce 2s ease-in-out infinite}
+@keyframes birthdayBounce{0%,100%{transform:scale(1)} 50%{transform:scale(1.05)}}
+
+/* Birthday Cake - More Aesthetic */
+.birthday-cake-container{position:relative; margin:30px 0 20px; perspective:1000px; opacity:0; transform:translateY(15px) scale(0.95); animation:page4CakeEntrance .8s ease .2s forwards}
+@keyframes page4CakeEntrance{0%{opacity:0; transform:translateY(15px) scale(0.95)} 100%{opacity:1; transform:translateY(0) scale(1)}}
+.birthday-cake{position:relative; width:220px; height:140px; margin:0 auto; animation:cakeFloat 4s ease-in-out infinite}
+.cake-base{position:absolute; bottom:0; left:0; right:0; height:95px; background:linear-gradient(135deg, #ff6b9c 0%, #ff8fb3 50%, #ffa0c0 100%); border-radius:0 0 25px 25px; box-shadow:0 15px 35px rgba(255,107,156,.35), inset 0 -4px 8px rgba(255,255,255,.2), inset 0 4px 8px rgba(255,255,255,.1)}
+.cake-frosting{position:absolute; top:25px; left:1px; right:1px; height:22px; background:linear-gradient(135deg, #ffffff 0%, #ffd6e6 50%, #fff3f7 100%); border-radius:5px; box-shadow:0 8px 20px rgba(255,255,255,.6), inset 0 2px 4px rgba(255,255,255,.8)}
+.cake-frosting::after{content:''; position:absolute; inset:0; background:radial-gradient(circle at 50% 50%, transparent 0%, rgba(255,107,156,.1) 100%); border-radius:12px; pointer-events:none}
+
+/* Page 4 Candles - Specific to birthday cake */
+.page4 .candles-container{position:absolute; top:22px; left:50%; transform:translateX(-50%); display:flex; gap:18px; z-index:10; pointer-events:none}
+.page4 .candle{position:relative; width:10px; height:15px; cursor:pointer; transition:transform 0.2s ease; pointer-events:auto; z-index:11; padding:12px}
+.page4 .candle:hover{transform:scale(1.15)}
+.page4 .candle-body{width:100%; height:100%; background:linear-gradient(180deg, #ffffff 0%, #ffe3b8 100%); border-radius:4px; box-shadow:0 3px 10px rgba(0,0,0,.25), inset 0 2px 4px rgba(255,255,255,.8); position:relative; z-index:1}
+.page4 .flame{position:absolute; top:-10px; left:50%; transform:translateX(-50%); width:14px; height:18px; background:radial-gradient(circle at 50% 30%, #fff6a9 0 40%, #ffb703 45% 60%, #ff4d00 70% 100%); border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; animation:flameFlicker 1.5s ease-in-out infinite; opacity:1; transition:opacity 0.5s ease; z-index:12; filter:drop-shadow(0 0 8px rgba(255,183,3,.4))}
+.page4 .flame.blown{opacity:0; animation:none; transform:translateX(-50%) scale(0)}
+
+@keyframes cakeFloat{0%,100%{transform:translateY(0) rotateY(0deg)} 50%{transform:translateY(-5px) rotateY(2deg)}}
+@keyframes flameFlicker{0%,100%{transform:translateX(-50%) scale(1) rotate(-1deg)} 50%{transform:translateX(-50%) scale(1.1) rotate(1deg)}}
+
+/* Blow Instruction */
+.blow-instruction{text-align:center; color:var(--muted); font-size:16px; margin-top:12px; animation:pulse 2s ease-in-out infinite; font-weight:600; letter-spacing:.03em}
+@keyframes pulse{0%,100%{opacity:0.8; transform:scale(1)} 50%{opacity:1; transform:scale(1.05)}}
+
+/* Wish Reveal */
+.wish-reveal{position:fixed;inset:0;pointer-events:none;z-index:10; display:none}
+.wish-reveal.active{display:block}
+.wish-text{position:fixed;background:linear-gradient(135deg, rgba(255,107,156,.95), rgba(255,178,122,.9)); color:#2b0f16; padding:12px 18px; border-radius:25px; font-weight:700; font-size:16px; box-shadow:0 10px 25px rgba(255,107,156,.4); opacity:0; transform:scale(0.8) translate(-50%, -50%); animation:wishPop 3s ease-out forwards; white-space:nowrap; max-width:250px; text-align:center}
+@keyframes wishPop{0%{opacity:0; transform:scale(0.8) translate(-50%, -50%) translateY(30px)} 20%,80%{opacity:1; transform:scale(1.1) translate(-50%, -50%) translateY(0)} 100%{opacity:0; transform:scale(0.9) translate(-50%, -50%) translateY(-30px)}}
+
+/* Balloon Release */
+.balloon-release{position:fixed;inset:0;pointer-events:none;z-index:5; overflow:hidden}
+.balloon{position:absolute;bottom:-50px; width:30px; height:40px; border-radius:50% 50% 50% 50% / 60% 60% 40% 40%; animation:balloonFloat 8s linear forwards; opacity:0.9}
+.balloon::before{content:''; position:absolute; bottom:-15px; left:50%; transform:translateX(-50%); width:2px; height:20px; background:#8B4513; border-radius:1px}
+@keyframes balloonFloat{0%{transform:translateY(0) translateX(0) rotate(0deg); opacity:0.9} 100%{transform:translateY(-120vh) translateX(var(--drift, 30px)) rotate(360deg); opacity:0}}
+
+/* Confetti */
+.confetti-container{position:fixed;inset:0;pointer-events:none;z-index:8}
+.confetti{position:absolute;width:8px;height:8px;animation:confettiFall 3s linear forwards; opacity:0.9}
+@keyframes confettiFall{0%{transform:translateY(-50px) rotate(0deg); opacity:0.9} 100%{transform:translateY(100vh) rotate(720deg); opacity:0}}
+
+/* Responsive Design */
+@media (max-width: 768px){
+  /* Typography adjustments */
+  .title{font-size: clamp(32px,8vw,56px); margin:8px 0}
+  .subtitle{font-size:clamp(14px,3.5vw,18px); margin:0 0 14px}
+  .script{font-size:clamp(22px,5.5vw,36px)}
+  
+  /* Container adjustments */
+  .page .container{padding:20px; gap:12px}
+  .container.split{grid-template-columns:1fr; gap:24px}
+  .container.center{gap:12px}
+  
+  /* Cake adjustments */
+  .cake{width:180px; height:180px; filter:drop-shadow(0 16px 32px rgba(255,107,156,.24))}
+  .layer{width:160px; height:36px}
+  .layer2{width:140px}
+  .layer3{width:120px}
+  .icing{width:130px; height:20px}
+  
+  /* Button adjustments */
+  .btn{padding:12px 18px; border-radius:14px; font-size:14px}
+  
+  /* Modal adjustments */
+  .modal-content{width:min(90vw,400px); padding:20px; margin:20px}
+  
+  /* Slider adjustments */
+  .slider-container{max-width:350px}
+  .card-content{padding:16px}
+  .card-note{font-size:15px}
+  .slider-btn{width:36px; height:36px; font-size:18px}
+  
+  /* Page 3 mobile adjustments */
+  .page3-photo{margin:15px 0}
+  .photo-frame-single{max-width:280px}
+  .love-note{font-size:12px; padding:6px 10px}
+  .rain-heart{font-size:14px}
+  .sparkle{width:3px; height:3px}
+  .surprise-text{font-size:14px; padding:10px 14px; max-width:160px}
+  
+  /* Page 4 mobile adjustments */
+  .birthday-cake-container{margin:35px 0 20px}
+  .birthday-cake{width:180px; height:115px}
+  .cake-base{height:80px}
+  .cake-frosting{top:20px; height:18px}
+  .page4 .candles-container{gap:15px; top:1px}
+  .page4 .candle{width:8px; height:25px; min-width:44px; min-height:25px}
+  .page4 .candle-body{min-width:8px; min-height:30px}
+  .page4 .flame{width:12px; height:16px; top:-8px; min-width:12px; min-height:16px}
+  .wish-text{font-size:15px; padding:11px 16px; max-width:180px}
+  .balloon{width:24px; height:34px}
+  .blow-instruction{font-size:14px; margin-top:10px}
+  
+  /* Quotes adjustments */
+  .page1 .quotes{gap:4px; margin:8px 0 0}
+  .page1 .quotes li{font-size:14px}
+}
+
+@media (max-width: 480px){
+  /* Extra small screens */
+  .page .container{padding:16px}
+  .title{font-size: clamp(28px,10vw,48px)}
+  .subtitle{font-size:clamp(13px,4vw,16px)}
+  .script{font-size:clamp(20px,6vw,32px)}
+  
+  .cake{width:160px; height:160px}
+  .layer{width:140px; height:32px}
+  .layer2{width:120px}
+  .layer3{width:100px}
+  .icing{width:110px; height:18px}
+  .candle{width:12px; height:40px}
+  .flame{width:12px; height:18px; top:-14px}
+  
+  .btn{padding:10px 16px; font-size:13px}
+  .modal-content{padding:16px; margin:16px}
+  .slider-container{max-width:320px}
+  .card-content{padding:14px}
+  .card-note{font-size:14px}
+  .slider-btn{width:32px; height:32px; font-size:16px}
+  
+  /* Page 3 extra small adjustments */
+  .page3-photo{margin:12px 0}
+  .photo-frame-single{max-width:260px}
+  .love-note{font-size:11px; padding:5px 8px}
+  .rain-heart{font-size:12px}
+  .sparkle{width:2px; height:2px}
+  .surprise-text{font-size:13px; padding:8px 12px; max-width:140px}
+  
+  /* Page 4 extra small adjustments */
+  .birthday-cake-container{margin: 35px 0 30px}
+  .birthday-cake{width:150px; height:95px}
+  .cake-base{height:70px}
+  .cake-frosting{top:60px; height:15px}
+  .page4 .candles-container{gap:12px; top:40px}
+  .page4 .candle{width:7px; height:25px; min-width:44px; min-height:44px}
+  .page4 .candle-body{min-width:7px; min-height:25px}
+  .page4 .flame{width:10px; height:14px; top:-6px; min-width:10px; min-height:14px}
+  .wish-text{font-size:13px; padding:9px 13px; max-width:150px}
+  .balloon{width:22px; height:32px}
+  .blow-instruction{font-size:13px; margin-top:8px}
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse){
+  /* Reduce hover effects on touch devices */
+  .btn-cute:hover{transform:translateY(0) scale(1)}
+  .photo-frame:hover{transform:translateY(4px)}
+  .notes li:hover{transform:translateX(0)}
+  .cake:hover .flame{filter:none; transform:translateX(-50%) scale(1)}
+  .page4 .candle:hover{transform:scale(1)}
+  
+  /* Increase touch targets */
+  .btn{min-height:44px; min-width:44px}
+  .close{min-height:44px; min-width:44px; padding:8px}
+  .page4 .candle{min-height:44px; min-width:44px; padding:8px}
+  .slider-btn{min-height:44px; min-width:44px}
+  
+  /* Reduce animation intensity on mobile */
+  .heart{animation-duration: 4s}
+  .cake{animation-duration: 6s}
+  .flame{animation-duration: 2s}
+  .sparkles{animation-duration: 6s}
+  .birthday-cake{animation-duration: 5s}
+  .flameFlicker{animation-duration: 2s}
+  
+  /* Improve touch interactions */
+  .page4 .candle{transition:transform 0.1s ease}
+  .page4 .candle:active{transform:scale(0.95)}
+}
+
+/* Floating hearts */
+.hearts{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.heart{position:absolute;font-size:16px;color:var(--heart);opacity:.85;filter:drop-shadow(0 6px 16px rgba(255,92,138,.25)); animation:rise linear forwards}
+@keyframes rise{0%{transform:translateY(0) scale(.8);opacity:.9} 100%{transform:translateY(-120vh) scale(1.2);opacity:0}}
+
+/* Balloons removed */
+
+/* Quotes under subtitle */
+.page1 .quotes{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:6px;justify-items:center}
+.page1 .quotes li{color:var(--muted);opacity:0;transform:translateY(8px);animation:fadeUp .6s ease forwards}
+.page1 .quotes li:nth-child(1){animation-delay:.8s}
+.page1 .quotes li:nth-child(2){animation-delay:1.2s}
+.page1 .quotes li:nth-child(3){animation-delay:1.6s}
+
+/* Candle glow on hover */
+.cake:hover .flame{filter:drop-shadow(0 0 14px rgba(255,183,3,.55)) drop-shadow(0 0 28px rgba(255,77,0,.35)); transform:translateX(-50%) scale(1.12)}
+
+

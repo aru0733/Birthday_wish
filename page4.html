@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>For You</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body class="page page4">
+  <main class="container center">
+    <h1 class="title">Happy Birthday! 🎉</h1>
+    <p class="subtitle">Blow the candles by tapping them!</p>
+    
+    <!-- Birthday Cake with Interactive Candles -->
+    <div class="birthday-cake-container" id="cakeContainer">
+      <div class="birthday-cake" id="birthdayCake">
+        <div class="cake-base"></div>
+        <div class="cake-frosting"></div>
+        <div class="candles-container" id="candlesContainer">
+          <div class="candle" data-candle="1">
+            <div class="candle-body"></div>
+            <div class="flame" data-flame="1"></div>
+          </div>
+          <div class="candle" data-candle="2">
+            <div class="candle-body"></div>
+            <div class="flame" data-flame="2"></div>
+          </div>
+          <div class="candle" data-candle="3">
+            <div class="candle-body"></div>
+            <div class="flame" data-flame="3"></div>
+          </div>
+        </div>
+      </div>
+      <p class="blow-instruction">👆 Tap the flames to blow! 💨</p>
+    </div>
+    
+    <!-- Birthday Wish Reveal -->
+    <div class="wish-reveal" id="wishReveal">
+      <div class="wish-text">Your wish came true! ✨</div>
+      <div class="wish-text">You're the most amazing person! 💖</div>
+      <div class="wish-text">May all your dreams come true! 🌟</div>
+    </div>
+    
+    <!-- Balloon Release Effect -->
+    <div class="balloon-release" id="balloonRelease"></div>
+    
+    <!-- Confetti Celebration -->
+    <div class="confetti-container" id="confettiContainer"></div>
+    
+    <a class="btn btn-cute" href="index.html">Back to the start ⟲</a>
+  </main>
+   <script src="js/script.js"></script>
+</body>
+</html>
