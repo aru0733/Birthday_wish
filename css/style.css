@@ -184,7 +184,7 @@ body{
 /* Wish Reveal */
 .wish-reveal{position:fixed;inset:0;pointer-events:none;z-index:10; display:none}
 .wish-reveal.active{display:block}
-.wish-text{position:fixed;background:linear-gradient(135deg, rgba(255,107,156,.95), rgba(255,178,122,.9)); color:#2b0f16; padding:12px 18px; border-radius:25px; font-weight:700; font-size:16px; box-shadow:0 10px 25px rgba(255,107,156,.4); opacity:0; transform:scale(0.8) translate(-50%, -50%); animation:wishPop 3s ease-out forwards; white-space:nowrap; max-width:250px; text-align:center}
+.wish-text{position:fixed;background:linear-gradient(135deg, rgba(255,107,156,.95), rgba(255,178,122,.9)); color:#2b0f16; padding:20px 25px; border-radius:25px; font-weight:700; font-size:16px; box-shadow:0 10px 25px rgba(255,255,255,.4); opacity:0; transform:scale(0.8) translate(-50%, -50%); animation:wishPop 3s ease-out forwards; white-space:nowrap; max-width:250px; text-align:center}
 @keyframes wishPop{0%{opacity:0; transform:scale(0.8) translate(-50%, -50%) translateY(30px)} 20%,80%{opacity:1; transform:scale(1.1) translate(-50%, -50%) translateY(0)} 100%{opacity:0; transform:scale(0.9) translate(-50%, -50%) translateY(-30px)}}
 
 /* Balloon Release */
