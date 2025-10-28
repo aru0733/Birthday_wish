@@ -146,7 +146,7 @@ body{
 
 /* Surprise Messages */
 .surprise-messages{position:fixed;inset:0;pointer-events:none;z-index:2}
-.surprise-text{position:absolute;background:linear-gradient(135deg, rgba(255,107,156,.95), rgba(255,178,122,.9)); color:#2b0f16; padding:12px 16px; border-radius:16px; font-weight:700; font-size:16px; box-shadow:0 10px 25px rgba(255,107,156,.4); opacity:0; transform:scale(0.8); animation:surprisePop 2.5s ease-out forwards; white-space:nowrap; max-width:200px; text-align:center}
+.surprise-text{position:absolute;background:linear-gradient(135deg, rgba(255,107,156,.95), rgba(255,178,122,.9)); color:#2b0f16; padding:12px 16px; border-radius:16px; font-weight:700; font-size:16px; box-shadow:0 10px 25px rgba(255,255,255,.4); opacity:0; transform:scale(0.8); animation:surprisePop 4s ease-out forwards; white-space:nowrap; max-width:200px; text-align:center}
 @keyframes surprisePop{0%{opacity:0; transform:scale(0.8) translateY(20px)} 15%,85%{opacity:1; transform:scale(1.05) translateY(0)} 100%{opacity:0; transform:scale(0.9) translateY(-20px)}}
 
 /* Floating Hearts Background */
